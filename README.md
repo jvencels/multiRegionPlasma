@@ -115,8 +115,8 @@ fields.
 Program was designed as a part of Bachelor's thesis. The purpose was to
 create a tool to optimize magnetron sputtering process. OpenFOAM was
 chosen as a basis because of free availability, open source code and large
-community. Bachelor's thesis can be found in the 
-[cfd-online forum.](http://www.cfd-online.com/Forums/openfoam-solving/)
+community. Discussion can be found in the [cfd-online forum.](http://www.cfd-online.com/Forums/openfoam-solving/126256-multi-region-solver-electric-magnetic-fields-charged-particles.html)
+BSc work called *BSc-work.pdf* you can find in the main folder.
 The work is written in Latvian because of compulsory requirement. 
 
 
@@ -209,4 +209,4 @@ Private email:
 juris.vencels@gmail.com
 
 For general questions:
-http://www.cfd-online.com/Forums/openfoam-solving/
+http://www.cfd-online.com/Forums/openfoam-solving/126256-multi-region-solver-electric-magnetic-fields-charged-particles.html

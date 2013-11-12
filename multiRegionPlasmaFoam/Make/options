@@ -1,0 +1,21 @@
+EXE_INC = \
+    -I.. \
+    -Iempty \
+    -Iair \
+    -Ilinear \
+    -Inonlinear \
+    -Iinclude \
+    -I$(LIB_SRC)/finiteVolume/lnInclude \
+    -I$(LIB_SRC)/meshTools/lnInclude \
+    -I$(LIB_SRC)/lagrangian/basic/lnInclude \
+    -I/home/juris/Desktop/multiRegionPlasma/dsmc/lnInclude
+
+EXE_LIBS = \
+    -lfiniteVolume \
+    -lmeshTools \
+    -llagrangian \
+    -L$(FOAM_USER_LIBBIN) \
+    -lplasma
+
+
+

@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Script for .stl file processing
+# Merges separate boundaries in regions
+
+# Change region names here; "box" also appears below
+regions=( box air substrate container space target wire magnet1 magnet2 ring )
+
+cd draft
+
+for n in ${regions[@]}
+do
+   for i in $n*
+   do
+      if [ "${i#*.}" = "stl" ] ; then
+         sed s/'solid'/'solid '${i%.*}/ <$i >> $n.stl
+      fi
+   done
+done
+
+for n in min max
+do
+   for i in $n*
+   do
+      sed s/'solid'/'solid '${i%.*}/ <$i >> box.stl
+   done
+done
+
+for n in ${regions[@]}
+do
+    mv $n.stl ../final
+done
+

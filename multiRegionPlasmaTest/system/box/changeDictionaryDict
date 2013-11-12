@@ -1,0 +1,169 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.1.1                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      changeDictionaryDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dictionaryReplacement
+{
+    boundary
+    {
+        minX
+        {
+            type            patch;
+        }
+        maxX
+        {
+            type            patch;
+        }
+        minY
+        {
+            type            patch;
+        }
+        maxY
+        {
+            type            patch;
+        }
+        minZ
+        {
+            type            patch;
+        }
+        maxZ
+        {
+            type            patch;
+        }
+    }
+
+ /*   phi
+    {
+        internalField   uniform 0;
+
+        boundaryField
+        {
+            ".*"
+            {
+                type            fixedValue;
+                value           uniform 0;
+            }
+        }
+    }
+
+    sigma
+    {
+        internalField   uniform 0;
+
+        boundaryField
+        {
+            ".*"
+            {
+                type            fixedValue;
+                value           uniform 0;
+            }
+        }
+    }
+
+    J
+    {
+        internalField   uniform (0 0 0);
+
+        boundaryField
+        {
+            ".*"
+            {
+		type            fixedValue;
+		value           uniform (0 0 0);
+            }
+        }
+    }
+
+    A
+    {
+        internalField   uniform (0 0 0);
+
+        boundaryField
+        {
+            ".*"
+            {
+		type            fixedValue;
+		value           uniform (0 0 0);
+            }
+            "box_to_air.*"
+            {
+                type            AOpen;
+                neighbourFieldName A;
+                radius		0.2;
+                K               fixedValue;
+		KName		none;
+                value           uniform (0 0 0);
+            }
+        }
+    }
+
+    B
+    {
+        internalField   uniform (0 0 0);
+
+        boundaryField
+        {
+            ".*"
+            {
+		type            fixedValue;
+		value           uniform (0 0 0);
+            }
+        }
+    }
+
+    H
+    {
+        internalField   uniform (0 0 0);
+
+        boundaryField
+        {
+            ".*"
+            {
+		type            fixedValue;
+		value           uniform (0 0 0);
+            }
+        }
+    }
+
+    Hc
+    {
+        internalField   uniform (0 0 0);
+
+        boundaryField
+        {
+            ".*"
+            {
+		type            fixedValue;
+		value           uniform (0 0 0);
+            }
+	}
+    }
+
+    viR
+    {
+        internalField   uniform 1;
+
+        boundaryField
+        {
+            ".*"
+            {
+                type            fixedValue;
+                value           uniform 1;
+            }
+        }
+    }*/
+}
+
+// ************************************************************************* //

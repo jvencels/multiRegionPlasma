@@ -1,0 +1,118 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.1.1                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      changeDictionaryDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dictionaryReplacement
+{
+
+    phi
+    {
+        internalField   uniform 0;
+
+        boundaryField
+        {
+            ".*"
+            {
+                type            fixedValue;
+                value           uniform 0;
+            }
+        }
+    }
+
+    sigma
+    {
+        internalField   uniform 0;
+
+        boundaryField
+        {
+            ".*"
+            {
+                type            fixedValue;
+                value           uniform 0;
+            }
+        }
+    }
+
+    J
+    {
+        internalField   uniform (0 0 0);
+
+        boundaryField
+        {
+            ".*"
+            {
+		type            calculated;
+		value           uniform (0 0 0);
+            }
+        }
+    }
+
+    A
+    {
+        internalField   uniform (0 0 0);
+
+        boundaryField
+        {
+            ".*"
+            {
+                type            AMixed;
+            }
+        }
+    }
+
+    B
+    {
+        internalField   uniform (0 0 0);
+
+        boundaryField
+        {
+            ".*"
+            {
+		type            calculated;
+		value           uniform (0 0 0);
+            }
+        }
+    }
+
+    Hc
+    {
+        internalField   uniform (0 0 0);
+
+        boundaryField
+        {
+            ".*"
+            {
+		type            fixedValue;
+		value           uniform (0 0 0);
+            }
+        }
+    }
+
+    mu
+    {
+        internalField   uniform 4075.4511;
+
+        boundaryField
+        {
+            ".*"
+            {
+		type            calculated;
+                value           uniform 4075.4511;
+            }
+        }
+    }
+}
+
+// ************************************************************************* //

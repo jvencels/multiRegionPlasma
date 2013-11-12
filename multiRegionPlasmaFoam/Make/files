@@ -1,0 +1,8 @@
+AMixedFvPatchVectorField.C
+phiOpenFvPatchScalarField.C
+AOpenFvPatchVectorField.C
+regionProperties.C
+multiRegionPlasmaFoam.C
+
+EXE = $(FOAM_USER_APPBIN)/multiRegionPlasmaFoam
+

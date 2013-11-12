@@ -1,0 +1,33 @@
+#!/bin/sh
+cd ${0%/*} || exit 1    # run from this directory
+
+# Source tutorial clean functions
+. $WM_PROJECT_DIR/bin/tools/CleanFunctions
+
+cleanCase
+rm -rf VTK
+rm -rf constant/cellToRegion constant/polyMesh/sets
+rm -rf 0/air
+rm -rf 0/box
+rm -rf 0/substrate
+rm -rf 0/container
+rm -rf 0/wire
+rm -rf 0/space
+rm -rf 0/target
+rm -rf 0/ring
+rm -rf 0/magnet1
+rm -rf 0/magnet2
+rm -f 0/cellToRegion
+rm -rf constant/air/polyMesh
+rm -rf constant/box/polyMesh
+rm -rf constant/substrate/polyMesh
+rm -rf constant/container/polyMesh
+rm -rf constant/wire/polyMesh
+rm -rf constant/space/polyMesh
+rm -rf constant/ring/polyMesh
+rm -rf constant/target/polyMesh
+rm -rf constant/magnet1/polyMesh
+rm -rf constant/magnet2/polyMesh
+rm -rf constant/polyMesh/boundary
+
+# ----------------------------------------------------------------- end-of-file

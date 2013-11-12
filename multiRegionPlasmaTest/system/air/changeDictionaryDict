@@ -1,0 +1,353 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.1.1                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      changeDictionaryDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dictionaryReplacement
+{
+    boundary
+    {
+        air_to_target
+        {
+            type            mappedPatch;
+        }
+        air_to_substrate
+        {
+            type            mappedWall;
+        }
+        air_to_container
+        {
+            type            mappedWall;
+        }
+        air_to_box
+        {
+            type            wall;
+        }
+    }
+    phi
+    {
+        internalField   uniform 0;
+
+        boundaryField
+        {
+            ".*"
+            {
+                type            fixedValue;
+                value           uniform 0;
+            }
+            "air_to_box.*"
+            {
+                type            phiOpen;
+                radius		uniform 0.15;
+            }
+            "air_to_target.*"
+            {
+                type            fixedValue;
+                value           uniform -10;
+            }
+
+        }
+    }
+
+    sigma
+    {
+        internalField   uniform 0;
+
+        boundaryField
+        {
+            ".*"
+            {
+                type            fixedValue;
+                value           uniform 0;
+            }
+        }
+    }
+
+    J
+    {
+        internalField   uniform (0 0 0);
+
+        boundaryField
+        {
+            ".*"
+            {
+		type            fixedValue;
+		value           uniform (0 0 0);
+            }
+        }
+    }
+
+    A
+    {
+        internalField   uniform (0 0 0);
+
+        boundaryField
+        {
+            ".*"
+            {
+		type            AMixed;
+            }            
+            "air_to_box.*"
+            {
+                type            AOpen;
+                radius		uniform 0.15;
+            }
+        }
+    }
+
+    B
+    {
+        internalField   uniform (0 0 0);
+
+        boundaryField
+        {
+            ".*"
+            {
+		type            calculated;
+		value           uniform (0 0 0);
+            }
+        }
+    }
+
+    E
+    {
+        internalField   uniform (0 0 0);
+
+        boundaryField
+        {
+            ".*"
+            {
+		type            calculated;
+		value           uniform (0 0 0);
+            }
+        }
+    }
+
+    mu
+    {
+        internalField   uniform 1;
+
+        boundaryField
+        {
+            ".*"
+            {
+                type            fixedValue;
+                value           uniform 1;
+            }
+        }
+    }
+
+    boundaryT
+    {
+        internalField   uniform 0;
+
+        boundaryField
+        {
+            ".*"
+            {
+                type            fixedValue;
+                value           uniform 400;
+            }
+        }
+    }
+
+    boundaryU
+    {
+        internalField   uniform (0 0 0);
+
+        boundaryField
+        {
+            ".*"
+            {
+                type            fixedValue;
+                value           uniform (0 0 0);
+            }
+            "air_to_target.*"
+            {
+                type            fixedValue;
+                value           uniform (0 0 10000);
+            }
+        }
+    }
+
+    dsmcRhoN
+    {
+        internalField   uniform 0;
+
+        boundaryField
+        {
+            ".*"
+            {
+        	type            zeroGradient;
+            }
+        }
+    }
+
+    fD
+    {
+        internalField   uniform (0 0 0);
+
+        boundaryField
+        {
+            ".*"
+            {
+		type            calculated;
+		value           uniform (0 0 0);
+            }
+            "air_to_target.*"
+            {
+        	type            zeroGradient;
+            }
+        }
+    }
+
+    iDof
+    {
+        internalField   uniform 0;
+
+        boundaryField
+        {
+            ".*"
+            {
+		type            calculated;
+		value           uniform 0;
+
+            }
+            "air_to_target.*"
+            {
+        	type            zeroGradient;
+            }
+        }
+    }
+
+    internalE
+    {
+        internalField   uniform 0;
+
+        boundaryField
+        {
+            ".*"
+            {
+		type            calculated;
+		value           uniform 0;
+            }
+            "air_to_target.*"
+            {
+        	type            zeroGradient;
+            }
+        }
+    }
+
+    linearKE
+    {
+        internalField   uniform 0;
+
+        boundaryField
+        {
+            ".*"
+            {
+		type            calculated;
+		value           uniform 0;
+            }
+            "air_to_target.*"
+            {
+        	type            zeroGradient;
+            }
+        }
+    }
+
+    momentum
+    {
+        internalField   uniform (0 0 0);
+
+        boundaryField
+        {
+            ".*"
+            {
+		type            calculated;
+		value           uniform (0 0 0);
+            }
+            "air_to_target.*"
+            {
+        	type            zeroGradient;
+            }
+        }
+    }
+
+    q
+    {
+        internalField   uniform 0;
+
+        boundaryField
+        {
+            ".*"
+            {
+		type            calculated;
+		value           uniform 0;
+            }
+        }
+    }
+
+    rhoM
+    {
+        internalField   uniform 0;
+
+        boundaryField
+        {
+            ".*"
+            {
+		type            calculated;
+		value           uniform 0;
+            }
+            "air_to_target.*"
+            {
+        	type            zeroGradient;
+            }
+        }
+    }
+
+    rhoN
+    {
+        internalField   uniform 0;
+
+        boundaryField
+        {
+            ".*"
+            {
+		type            calculated;
+		value           uniform 0;
+            }
+            "air_to_target.*"
+            {
+        	type            zeroGradient;
+            }
+        }
+    }
+
+    rhoQ
+    {
+        internalField   uniform 0;
+
+        boundaryField
+        {
+            ".*"
+            {
+		type            calculated;
+		value           uniform 0;
+            }
+        }
+    }
+}
+
+// ************************************************************************* //

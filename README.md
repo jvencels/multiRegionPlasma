@@ -32,16 +32,18 @@ such files:
 * *multiRegionPlasmaFoam/Make/options*
 
 To compile:
-> cd basic
-> wmake libso
-> cd ../dsmc
-> wmake libso
-> cd ../plasmaInitialise
-> chmod +x Allrun
-> ./Allrun
-> cd ../multiRegionPlasmaFoam
-> chmod +x Allrun
-> ./Allrun
+```bash
+ cd basic
+ wmake libso
+ cd ../dsmc
+ wmake libso
+ cd ../plasmaInitialise
+ chmod +x Allrun
+ ./Allrun
+ cd ../multiRegionPlasmaFoam
+ chmod +x Allrun
+ ./Allrun
+```
 
 Now in the folder */home/juris/OpenFOAM/juris-2.2.0/platforms/* you will find
 compiled libraries and program.
@@ -57,6 +59,7 @@ If you want just to try the program, you can skip this step.
 
 Geometry and .stl file generation files are located in
 *multiRegionPlasmaTest/geometry*.
+
 1. Make appropriate changes to adresses that contains */home/juris/Desktop/* in
 the file *scriptSalome.py*.
 2. Open Salome and open *geometrySalome.hdf*. In *Geometry* module you can see
@@ -76,9 +79,11 @@ region.
 5. Copy these region surface meshes to folder *constant/triSurface*.
 
 #### Running the example
-> cd multiRegionPlasmaTest
-> chmod +x Allrun
-> ./Allrun
+```bash
+ cd multiRegionPlasmaTest
+ chmod +x Allrun
+ ./Allrun
+ ```
 
 #### Possible problems during a run
 
